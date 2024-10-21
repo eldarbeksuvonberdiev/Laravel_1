@@ -17,24 +17,3 @@ Route::get('/widget', function () {
 Route::get('/layout1', function () {
     return view('layouts/layout1');
 });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });
-// Route::get('/', function () {
-//     return view('main');
-// });

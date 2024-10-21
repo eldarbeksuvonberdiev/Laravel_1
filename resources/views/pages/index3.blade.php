@@ -1,5 +1,7 @@
 @extends('main')
 
+@section('title','Index 3')
+
 @section('content')
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->

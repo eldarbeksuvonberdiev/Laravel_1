@@ -1,5 +1,7 @@
 @extends('main')
 
+@section('title','Widget')
+
 
 @section('content')
 <div class="content-wrapper">
