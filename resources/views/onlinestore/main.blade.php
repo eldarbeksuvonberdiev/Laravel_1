@@ -2,27 +2,27 @@
 <html lang="en">
 
 <head>
-    <title>Vereesa - Home</title>
+    <title>@yield('title')</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href={{ asset('images/favicon.png') }} />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/jquery-ui.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/chosen.min.css">
-    <link rel="stylesheet" href="assets/css/pe-icon-7-stroke.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
-    <link rel="stylesheet" href="assets/css/lightbox.min.css">
-    <link rel="stylesheet" href="assets/js/fancybox/source/jquery.fancybox.css">
-    <link rel="stylesheet" href="assets/css/jquery.scrollbar.min.css">
-    <link rel="stylesheet" href="assets/css/mobile-menu.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href={{ asset('css/bootstrap.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/font-awesome.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/owl.carousel.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/animate.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/jquery-ui.css') }}>
+    <link rel="stylesheet" href={{ asset('css/slick.css') }}>
+    <link rel="stylesheet" href={{ asset('css/chosen.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/pe-icon-7-stroke.css') }}>
+    <link rel="stylesheet" href={{ asset('css/magnific-popup.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/lightbox.min.css') }}>
+    <link rel="stylesheet" href={{ asset('js/fancybox/source/jquery.fancybox.css') }}>
+    <link rel="stylesheet" href={{ asset('css/jquery.scrollbar.min.css') }}>
+    <link rel="stylesheet" href={{ asset('css/mobile-menu.css') }}>
+    <link rel="stylesheet" href={{ asset('css/style.css') }}>
 </head>
 
 <body class="home">
@@ -62,7 +62,7 @@
                     </div>
                     <ul class="header-user-links">
                         <li>
-                            <a href="login.html">Login or Register</a>
+                            <a href="/">ADMIN PAGE</a>
                         </li>
                     </ul>
                 </div>
@@ -82,17 +82,6 @@
                         <div class="block-search-block">
                             <form class="form-search form-search-width-category">
                                 <div class="form-content">
-                                    <div class="category">
-                                        <select title="cate" data-placeholder="All Categories" class="chosen-select"
-                                            tabindex="1">
-                                            <option value="United States">Accessories</option>
-                                            <option value="United Kingdom">Chairs</option>
-                                            <option value="Afghanistan">Tables</option>
-                                            <option value="Aland Islands">Sofas</option>
-                                            <option value="Albania">New Arrivals</option>
-                                            <option value="Algeria">Storage</option>
-                                        </select>
-                                    </div>
                                     <div class="inner">
                                         <input type="text" class="input" name="s" value=""
                                             placeholder="Search here">
@@ -104,263 +93,12 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-sm-12 col-md-3 col-xs-12 col-ts-12">
-                        <div class="header-control">
-                            <div class="block-minicart vereesa-mini-cart block-header vereesa-dropdown">
-                                <a href="javascript:void(0);" class="shopcart-icon" data-vereesa="vereesa-dropdown">
-                                    Cart
-                                    <span class="count">
-                                        0
-                                    </span>
-                                </a>
-                                <div class="shopcart-description vereesa-submenu">
-                                    <div class="content-wrap">
-                                        <h3 class="title">Shopping Cart</h3>
-                                        <ul class="minicart-items">
-                                            <li class="product-cart mini_cart_item">
-                                                <a href="#" class="product-media">
-                                                    <img src="assets/images/item-minicart-1.jpg" alt="img">
-                                                </a>
-                                                <div class="product-details">
-                                                    <h5 class="product-name">
-                                                        <a href="#">Plastic Dining Chair</a>
-                                                    </h5>
-                                                    <div class="variations">
-                                                        <span class="attribute_color">
-                                                            <a href="#">Black</a>
-                                                        </span>
-                                                        ,
-                                                        <span class="attribute_size">
-                                                            <a href="#">300ml</a>
-                                                        </span>
-                                                    </div>
-                                                    <span class="product-price">
-                                                        <span class="price">
-                                                            <span>€45</span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="product-quantity">
-                                                        (x1)
-                                                    </span>
-                                                    <div class="product-remove">
-                                                        <a href=""><i class="fa fa-trash-o"
-                                                                aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="product-cart mini_cart_item">
-                                                <a href="#" class="product-media">
-                                                    <img src="assets/images/item-minicart-2.jpg" alt="img">
-                                                </a>
-                                                <div class="product-details">
-                                                    <h5 class="product-name">
-                                                        <a href="#">Soap Lighting Solutions</a>
-                                                    </h5>
-                                                    <div class="variations">
-                                                        <span class="attribute_color">
-                                                            <a href="#">Black</a>
-                                                        </span>
-                                                        ,
-                                                        <span class="attribute_size">
-                                                            <a href="#">300ml</a>
-                                                        </span>
-                                                    </div>
-                                                    <span class="product-price">
-                                                        <span class="price">
-                                                            <span>€45</span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="product-quantity">
-                                                        (x1)
-                                                    </span>
-                                                    <div class="product-remove">
-                                                        <a href=""><i class="fa fa-trash-o"
-                                                                aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="product-cart mini_cart_item">
-                                                <a href="#" class="product-media">
-                                                    <img src="assets/images/item-minicart-3.jpg" alt="img">
-                                                </a>
-                                                <div class="product-details">
-                                                    <h5 class="product-name">
-                                                        <a href="#">Lighting Solutions Soap</a>
-                                                    </h5>
-                                                    <div class="variations">
-                                                        <span class="attribute_color">
-                                                            <a href="#">Black</a>
-                                                        </span>
-                                                        ,
-                                                        <span class="attribute_size">
-                                                            <a href="#">300ml</a>
-                                                        </span>
-                                                    </div>
-                                                    <span class="product-price">
-                                                        <span class="price">
-                                                            <span>€45</span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="product-quantity">
-                                                        (x1)
-                                                    </span>
-                                                    <div class="product-remove">
-                                                        <a href=""><i class="fa fa-trash-o"
-                                                                aria-hidden="true"></i></a>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                        <div class="subtotal">
-                                            <span class="total-title">Subtotal: </span>
-                                            <span class="total-price">
-                                                <span class="Price-amount">
-                                                    €135
-                                                </span>
-                                            </span>
-                                        </div>
-                                        <div class="actions">
-                                            <a class="button button-viewcart" href="shoppingcart.html">
-                                                <span>View Bag</span>
-                                            </a>
-                                            <a href="checkout.html" class="button button-checkout">
-                                                <span>Checkout</span>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="block-account block-header vereesa-dropdown">
-                                <a href="javascript:void(0);" data-vereesa="vereesa-dropdown">
-                                    <i class="fa fa-user-o" aria-hidden="true"></i>
-                                </a>
-                                <div class="header-account vereesa-submenu">
-                                    <div class="header-user-form-tabs">
-                                        <ul class="tab-link">
-                                            <li class="active">
-                                                <a data-toggle="tab" aria-expanded="true"
-                                                    href="#header-tab-login">Login</a>
-                                            </li>
-                                            <li>
-                                                <a data-toggle="tab" aria-expanded="true"
-                                                    href="#header-tab-rigister">Register</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-container">
-                                            <div id="header-tab-login" class="tab-panel active">
-                                                <form method="post" class="login form-login">
-                                                    <p class="form-row form-row-wide">
-                                                        <input type="email" placeholder="Email" class="input-text">
-                                                    </p>
-                                                    <p class="form-row form-row-wide">
-                                                        <input type="password" class="input-text"
-                                                            placeholder="Password">
-                                                    </p>
-                                                    <p class="form-row">
-                                                        <label class="form-checkbox">
-                                                            <input type="checkbox" class="input-checkbox">
-                                                            <span>
-                                                                Remember me
-                                                            </span>
-                                                        </label>
-                                                        <input type="submit" class="button" value="Login">
-                                                    </p>
-                                                    <p class="lost_password">
-                                                        <a href="#">Lost your password?</a>
-                                                    </p>
-                                                </form>
-                                            </div>
-                                            <div id="header-tab-rigister" class="tab-panel">
-                                                <form method="post" class="register form-register">
-                                                    <p class="form-row form-row-wide">
-                                                        <input type="email" placeholder="Email" class="input-text">
-                                                    </p>
-                                                    <p class="form-row form-row-wide">
-                                                        <input type="password" class="input-text"
-                                                            placeholder="Password">
-                                                    </p>
-                                                    <p class="form-row">
-                                                        <input type="submit" class="button" value="Register">
-                                                    </p>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="menu-bar mobile-navigation menu-toggle" href="#">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
         <div class="header-nav-container rows-space-20">
             <div class="container">
                 <div class="header-nav-wapper main-menu-wapper">
-                    <div class="vertical-wapper block-nav-categori">
-                        <div class="block-title">
-                            <span class="icon-bar">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </span>
-                            <span class="text">All Departments</span>
-                        </div>
-                        <div class="block-content verticalmenu-content">
-                            <ul class="vereesa-nav-vertical vertical-menu vereesa-clone-mobile-menu">
-                                <li class="menu-item">
-                                    <a href="#" class="vereesa-menu-item-title" title="New Arrivals">New
-                                        Arrivals</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Hot Sale" href="#" class="vereesa-menu-item-title">Hot Sale</a>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a title="Accessories" href="#"
-                                        class="vereesa-menu-item-title">Accessories</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul role="menu" class=" submenu">
-                                        <li class="menu-item">
-                                            <a title="Clock" href="#" class="vereesa-item-title">Clock</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="Chairs" href="#" class="vereesa-item-title">Chairs</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="New Arrivals" href="#" class="vereesa-item-title">New
-                                                Arrivals</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="Accessories" href="#"
-                                                class="vereesa-item-title">Accessories</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a title="Storage" href="#" class="vereesa-item-title">Storage</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Chairs" href="#" class="vereesa-menu-item-title">Chairs</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Lamp" href="#" class="vereesa-menu-item-title">Lamp</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Lighting" href="#" class="vereesa-menu-item-title">Lighting</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Homewares" href="#" class="vereesa-menu-item-title">Homewares</a>
-                                </li>
-                                <li class="menu-item">
-                                    <a title="Bottles" href="#" class="vereesa-menu-item-title">Bottles</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
                     <div class="header-nav">
                         <div class="container-wapper">
                             <ul class="vereesa-clone-mobile-menu vereesa-nav main-menu " id="menu-main-menu">
@@ -369,130 +107,18 @@
                                     <span class="toggle-submenu"></span>
                                     <ul class="submenu">
                                         <li class="menu-item">
-                                            <a href="index.html">Home 01</a>
+                                            <a href="/tostore">Home 01</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="home2.html">Home 02</a>
+                                            <a href="/store2">Home 02</a>
                                         </li>
                                         <li class="menu-item">
-                                            <a href="home3.html">Home 03</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="gridproducts.html" class="vereesa-menu-item-title"
-                                        title="Shop">Shop</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="submenu">
-                                        <li class="menu-item">
-                                            <a href="gridproducts.html">Grid Fullwidth</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="gridproducts_leftsidebar.html">Grid Left sidebar</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="gridproducts_bannerslider.html">Grid Bannerslider</a>
-                                        </li>
-                                        <li class="menu-item">
-                                            <a href="listproducts.html">List</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="menu-item  menu-item-has-children item-megamenu">
-                                    <a href="#" class="vereesa-menu-item-title" title="Pages">Pages</a>
-                                    <span class="toggle-submenu"></span>
-                                    <div class="submenu mega-menu menu-page">
-                                        <div class="row">
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                                <div class="vereesa-custommenu default">
-                                                    <h2 class="widgettitle">Shop Pages</h2>
-                                                    <ul class="menu">
-                                                        <li class="menu-item">
-                                                            <a href="shoppingcart.html">Shopping Cart</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="checkout.html">Checkout</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="contact.html">Contact us</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="404page.html">404</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="login.html">Login/Register</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                                <div class="vereesa-custommenu default">
-                                                    <h2 class="widgettitle">Product</h2>
-                                                    <ul class="menu">
-                                                        <li class="menu-item">
-                                                            <a href="productdetails-fullwidth.html">Product
-                                                                Fullwidth</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="productdetails-leftsidebar.html">Product left
-                                                                sidebar</a>
-                                                        </li>
-                                                        <li class="menu-item">
-                                                            <a href="productdetails-rightsidebar.html">Product right
-                                                                sidebar</a>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-
-                                            </div>
-                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-3 menu-page-item">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="menu-item  menu-item-has-children">
-                                    <a href="inblog_right-siderbar.html" class="vereesa-menu-item-title"
-                                        title="Blogs">Blogs</a>
-                                    <span class="toggle-submenu"></span>
-                                    <ul class="submenu">
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#" class="vereesa-menu-item-title" title="Blog Style">Blog
-                                                Style</a>
-                                            <span class="toggle-submenu"></span>
-                                            <ul class="submenu">
-                                                <li class="menu-item">
-                                                    <a href="bloggrid.html">Grid</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="blogmasonry.html">Masonry</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="bloglist.html">List</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="bloglist-leftsidebar.html">List Sidebar</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#" class="vereesa-menu-item-title"
-                                                title="Post Layout">Post Layout</a>
-                                            <span class="toggle-submenu"></span>
-                                            <ul class="submenu">
-                                                <li class="menu-item">
-                                                    <a href="inblog_left-siderbar.html">Left Sidebar</a>
-                                                </li>
-                                                <li class="menu-item">
-                                                    <a href="inblog_right-siderbar.html">Right Sidebar</a>
-                                                </li>
-                                            </ul>
+                                            <a href="/store3">Home 03</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="menu-item">
-                                    <a href="about.html" class="vereesa-menu-item-title" title="About">About</a>
+                                    <a href="/about" class="vereesa-menu-item-title" title="About">About</a>
                                 </li>
                             </ul>
                         </div>
@@ -501,6 +127,7 @@
             </div>
         </div>
     </header>
+    @yield('content')
     <footer class="footer style7">
         <div class="container">
             <div class="container-wapper">
@@ -664,26 +291,26 @@
     <a href="#" class="backtotop">
         <i class="pe-7s-angle-up"></i>
     </a>
-    <script src="assets/js/jquery-1.12.4.min.js"></script>
-    <script src="assets/js/jquery.plugin-countdown.min.js"></script>
-    <script src="assets/js/jquery-countdown.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/owl.carousel.min.js"></script>
-    <script src="assets/js/magnific-popup.min.js"></script>
-    <script src="assets/js/isotope.min.js"></script>
-    <script src="assets/js/jquery.scrollbar.min.js"></script>
-    <script src="assets/js/jquery-ui.min.js"></script>
-    <script src="assets/js/mobile-menu.js"></script>
-    <script src="assets/js/chosen.min.js"></script>
-    <script src="assets/js/slick.js"></script>
-    <script src="assets/js/jquery.elevateZoom.min.js"></script>
-    <script src="assets/js/jquery.actual.min.js"></script>
-    <script src="assets/js/fancybox/source/jquery.fancybox.js"></script>
-    <script src="assets/js/lightbox.min.js"></script>
-    <script src="assets/js/owl.thumbs.min.js"></script>
-    <script src="assets/js/jquery.scrollbar.min.js"></script>
+    <script src={{ asset('js/jquery-1.12.4.min.js') }}></script>
+    <script src={{ asset('js/jquery.plugin-countdown.min.js') }}></script>
+    <script src={{ asset('js/jquery-countdown.min.js') }}></script>
+    <script src={{ asset('js/bootstrap.min.js') }}></script>
+    <script src={{ asset('js/owl.carousel.min.js') }}></script>
+    <script src={{ asset('js/magnific-popup.min.js') }}></script>
+    <script src={{ asset('js/isotope.min.js') }}></script>
+    <script src={{ asset('js/jquery.scrollbar.min.js') }}></script>
+    <script src={{ asset('js/jquery-ui.min.js') }}></script>
+    <script src={{ asset('js/mobile-menu.js') }}></script>
+    <script src={{ asset('js/chosen.min.js') }}></script>
+    <script src={{ asset('js/slick.js') }}></script>
+    <script src={{ asset('js/jquery.elevateZoom.min.js') }}></script>
+    <script src={{ asset('js/jquery.actual.min.js') }}></script>
+    <script src={{ asset('js/fancybox/source/jquery.fancybox.js') }}></script>
+    <script src={{ asset('js/lightbox.min.js') }}></script>
+    <script src={{ asset('js/owl.thumbs.min.js') }}></script>
+    <script src={{ asset('js/jquery.scrollbar.min.js') }}></script>
     <script src='https://maps.googleapis.com/maps/api/js?key=AIzaSyC3nDHy1dARR-Pa_2jjPCjvsOR4bcILYsM'></script>
-    <script src="assets/js/frontend-plugin.js"></script>
+    <script src={{ asset('js/frontend-plugin.js') }}></script>
 </body>
 
 </html>
