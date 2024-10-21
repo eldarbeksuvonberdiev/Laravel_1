@@ -1,4 +1,4 @@
-@extends('main')
+@extends('admin.main')
 
 @section('title','AdminLTE 3 | Dashboard')
 

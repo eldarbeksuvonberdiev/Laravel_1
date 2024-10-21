@@ -1,4 +1,4 @@
-@extends('main')
+@extends('admin.main')
 
 @section('title','Widget')
 

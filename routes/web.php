@@ -1,19 +1,11 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('pages/index1');
-});
-Route::get('/ind2', function () {
-    return view('pages/index2');
-});
-Route::get('/ind3', function () {
-    return view('pages/index3');
-});
-Route::get('/widget', function () {
-    return view('pages/widget');
-});
-Route::get('/layout1', function () {
-    return view('layouts/layout1');
-});
+Route::get('/',[AdminController::class,'index']);
+Route::get('/ind2',[AdminController::class,'index2']);
+Route::get('/ind3',[AdminController::class,'index3']);
+Route::get('/widget',[AdminController::class,'widget']);
+Route::get('/layout1',[AdminController::class,'layout1']);
+
