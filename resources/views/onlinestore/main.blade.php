@@ -103,7 +103,7 @@
                         <div class="container-wapper">
                             <ul class="vereesa-clone-mobile-menu vereesa-nav main-menu " id="menu-main-menu">
                                 <li class="menu-item  menu-item-has-children">
-                                    <a href="index.html" class="vereesa-menu-item-title" title="Home">Home</a>
+                                    <a href="/tostore" class="vereesa-menu-item-title" title="Home">Home</a>
                                     <span class="toggle-submenu"></span>
                                     <ul class="submenu">
                                         <li class="menu-item">
