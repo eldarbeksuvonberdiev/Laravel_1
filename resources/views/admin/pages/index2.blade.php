@@ -1,4 +1,4 @@
-@extends('admin.main')
+@extends('main')
 
 @section('title','Index2')
 
