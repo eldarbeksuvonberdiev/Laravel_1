@@ -1,6 +1,7 @@
 @extends('main')
 
 @section('title', 'AdminLTE 3 | Dashboard')
+@section('pagename', 'Orders')
 
 
 @section('content')

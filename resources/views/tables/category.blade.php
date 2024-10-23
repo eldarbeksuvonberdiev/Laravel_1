@@ -1,6 +1,7 @@
 @extends('main')
 
 @section('title', 'AdminLTE 3 | Dashboard')
+@section('pagename', 'Categories')
 
 
 @section('content')
@@ -8,7 +9,13 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <a href="/category-create" class="btn btn-primary">Create</a>
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    <div class="card mt-2">
                         <div class="card-header">
                             <h3 class="card-title">DataTable with minimal features & hover style</h3>
                         </div>
@@ -23,10 +30,10 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($category as $model)
-                                    <tr>
-                                        <td>{{ $model->id }}</td>
-                                        <td>{{ $model->name }}</td>
-                                    </tr>
+                                        <tr>
+                                            <td>{{ $model->id }}</td>
+                                            <td>{{ $model->name }}</td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
