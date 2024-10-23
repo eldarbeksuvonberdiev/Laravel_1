@@ -18,14 +18,18 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>NAME</th>
+                                        <th>Post ID</th>
+                                        <th>User ID</th>
+                                        <th>Active or Inactive</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($category as $model)
+                                    @foreach ($likes as $like)
                                     <tr>
-                                        <td>{{ $model->id }}</td>
-                                        <td>{{ $model->name }}</td>
+                                        <td>{{ $like->id }}</td>
+                                        <td>{{ $like->post_id }}</td>
+                                        <td>{{ $like->user_id }}</td>
+                                        <td>{{ $like->is_active }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

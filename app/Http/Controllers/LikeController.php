@@ -11,6 +11,6 @@ class LikeController extends Controller
     public function index()
     {
         $models = Like::all();
-        return view('tables.category', ['category' => $models]);
+        return view('tables.likes', ['likes' => $models]);
     }
 }

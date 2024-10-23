@@ -11,6 +11,6 @@ class PostController extends Controller
     public function index()
     {
         $models = Post::all();
-        return view('tables.category', ['category' => $models]);
+        return view('tables.posts', ['posts' => $models]);
     }
 }

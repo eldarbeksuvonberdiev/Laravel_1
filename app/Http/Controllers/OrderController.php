@@ -11,6 +11,6 @@ class OrderController extends Controller
     public function index()
     {
         $models = Order::all();
-        return view('tables.category', ['category' => $models]);
+        return view('tables.orders', ['orders' => $models]);
     }
 }

@@ -18,14 +18,18 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>NAME</th>
+                                        <th>Product ID</th>
+                                        <th>Count</th>
+                                        <th>Sum</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($category as $model)
+                                    @foreach ($orders as $order)
                                     <tr>
-                                        <td>{{ $model->id }}</td>
-                                        <td>{{ $model->name }}</td>
+                                        <td>{{ $order->id }}</td>
+                                        <td>{{ $order->product_id }}</td>
+                                        <td>{{ $order->count }}</td>
+                                        <td>{{ $order->summ }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

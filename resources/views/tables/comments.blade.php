@@ -18,14 +18,16 @@
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>NAME</th>
+                                        <th>POST ID</th>
+                                        <th>Comment</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($category as $model)
+                                    @foreach ($comments as $comment)
                                     <tr>
-                                        <td>{{ $model->id }}</td>
-                                        <td>{{ $model->name }}</td>
+                                        <td>{{ $comment->id }}</td>
+                                        <td>{{ $comment->post_id }}</td>
+                                        <td>{{ $comment->body }}</td>
                                     </tr>
                                     @endforeach
                                 </tbody>

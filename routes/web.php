@@ -26,5 +26,5 @@ Route::get('/products',[ProductController::class,'index']);
 Route::get('/orders',[OrderController::class,'index']);
 Route::get('/posts',[PostController::class,'index']);
 Route::get('/likes',[LikeController::class,'index']);
-Route::get('/comment',[CommentController::class,'index']);
+Route::get('/comments',[CommentController::class,'index']);
 
