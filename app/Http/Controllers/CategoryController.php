@@ -35,12 +35,18 @@ class CategoryController extends Controller
         $category = new Category();
         $category->name = $request->name;
         $category->save();
-        return redirect('/')->with('success','Category is successfully created');
+        return redirect('/')->with([
+            'message' => 'Category is successfully created',
+            'status' => 'success'
+        ]);
     }
 
     public function delete(int $id){
         $model = Category::find($id);
         $model->delete();
-        return redirect('/');
+        return redirect('/')->with([
+            'message' => 'Category is successfully deleted',
+            'status' => 'danger'
+        ]);
     }
 }

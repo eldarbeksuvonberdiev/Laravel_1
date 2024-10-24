@@ -31,7 +31,10 @@ class PostController extends Controller
         ]);
         $model = $request->all();
         Post::create($model);
-        return redirect('/posts');
+        return redirect('/posts')->with([
+            'message' => 'Post is successfully created',
+            'status' => 'success'
+        ]);
     }
 
     public function view(int $id){
@@ -42,6 +45,9 @@ class PostController extends Controller
     public function delete(int $id){
         $model = Post::find($id);
         $model->delete();
-        return redirect('/posts');
+        return redirect('/posts')->with([
+            'message' => 'Post is successfully deleted',
+            'status' => 'danger'
+        ]);
     }
 }

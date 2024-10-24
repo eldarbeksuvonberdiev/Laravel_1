@@ -2610,14 +2610,14 @@
    * ====================================================
    */
 
-  var Toasts = /*#__PURE__*/function () {
-    function Toasts(element, config) {
-      this._config = config;
+  // var Toasts = /*#__PURE__*/function () {
+  //   function Toasts(element, config) {
+  //     this._config = config;
 
-      this._prepareContainer();
+  //     this._prepareContainer();
 
-      $__default["default"]('body').trigger($__default["default"].Event(EVENT_INIT));
-    } // Public
+  //     $__default["default"]('body').trigger($__default["default"].Event(EVENT_INIT));
+    // } // Public
 
 
     var _proto = Toasts.prototype;

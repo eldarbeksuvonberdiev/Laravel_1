@@ -44,5 +44,7 @@ Route::delete('/posts/{id}',[PostController::class,'delete']);
 Route::get('/likes',[LikeController::class,'index']);
 
 Route::get('/comments',[CommentController::class,'index']);
+Route::get('/comment-create',[CommentController::class,'create']);
+Route::post('/comment-create',[CommentController::class,'store']);
 
 
