@@ -30,8 +30,16 @@ Route::get('/products/{id}',[ProductController::class,'view']);
 Route::delete('/products/{id}',[ProductController::class,'delete']);
 
 Route::get('/orders',[OrderController::class,'index']);
+Route::get('/order-create',[OrderController::class,'create']);
+Route::post('/order-create',[OrderController::class,'store']);
+Route::get('/orders/{id}',[OrderController::class,'view']);
+Route::delete('/orders/{id}',[OrderController::class,'delete']);
 
 Route::get('/posts',[PostController::class,'index']);
+Route::get('/post-create',[PostController::class,'create']);
+Route::get('/posts/{id}',[PostController::class,'view']);
+Route::post('/post-create',[PostController::class,'store']);
+Route::delete('/posts/{id}',[PostController::class,'delete']);
 
 Route::get('/likes',[LikeController::class,'index']);
 

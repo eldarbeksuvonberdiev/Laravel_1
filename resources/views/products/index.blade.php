@@ -33,7 +33,8 @@
                                             <td>{{ $product->name }}</td>
                                             <td>{{ $product->category_id }}</td>
                                             <td>{{ $product->created_at }}</td>
-                                            <td><a href="/products/{{ $product->id }}" class="btn btn-primary"><i
+                                            <td>
+                                                <a href="/products/{{ $product->id }}" class="btn btn-primary"><i
                                                         class="bi bi-eye"></i></a>
                                             </td>
                                             <td>

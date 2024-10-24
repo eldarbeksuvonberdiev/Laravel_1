@@ -9,6 +9,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
+                    <a href="/post-create" class="btn btn-primary mb-2">Create</a>
                     <div class="card">
                         <div class="card-header">
                             <h3 class="card-title">DataTable with minimal features & hover style</h3>
@@ -18,12 +19,14 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Category ID</th>
-                                        <th>Title</th>
-                                        <th>Body</th>
-                                        <th>Likes</th>
-                                        <th>Dislikes</th>
+                                        <th style="width: 5px">ID</th>
+                                        <th style="width: 8px">Category ID</th>
+                                        <th style="width: 50px">Title</th>
+                                        <th style="width: 800px">Body</th>
+                                        <th style="width: 8px">Likes</th>
+                                        <th style="width: 8px">Dislikes</th>
+                                        <th style="width: 8px">View</th>
+                                        <th style="width: 8px">Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +38,18 @@
                                         <td>{{ $post->body }}</td>
                                         <td>{{ $post->likes }}</td>
                                         <td>{{ $post->dislikes }}</td>
+                                        <td>
+                                            <a href="/posts/{{ $post->id }}" class="btn btn-primary"><i
+                                                class="bi bi-eye"></i></a>
+                                        </td>
+                                        <td>
+                                            <form action="/posts/{{ $post->id }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger"><i
+                                                        class="bi bi-trash3"></i></button>
+                                            </form>
+                                        </td>
                                     </tr>
                                     @endforeach
                                 </tbody>
