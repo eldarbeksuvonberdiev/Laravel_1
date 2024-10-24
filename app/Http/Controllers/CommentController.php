@@ -24,7 +24,7 @@ class CommentController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'post_id' => 'required|exists:categories,id',
+            'post_id' => 'required|exists:posts,id',
             'body' => 'required'
         ]);
         $model = $request->all();
@@ -35,16 +35,14 @@ class CommentController extends Controller
         ]);
     }
 
-    public function view(int $id){
-        $model = Comment::find($id);
-        return view('posts.view',['post' => $model]);
+    public function view(Comment $id){
+        return view('comments.view',['comment' => $id]);
     }
    
-    public function delete(int $id){
-        $model = Post::find($id);
-        $model->delete();
-        return redirect('/posts')->with([
-            'message' => 'Post is successfully deleted',
+    public function delete(Comment $id){
+        $id->delete();
+        return redirect('/comments')->with([
+            'message' => 'Comment is successfully deleted',
             'status' => 'danger'
         ]);
     }

@@ -22,6 +22,7 @@ class PostFactory extends Factory
             'category_id' => fake()->numberBetween(1,15),
             'title' => fake()->title(),
             'body' => fake()->text(),
+            // 'image' => fake()->image(),
             'likes' => fake()->numberBetween(1,30),
             'dislikes' => fake()->numberBetween(1,30)
         ];

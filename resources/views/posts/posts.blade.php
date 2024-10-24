@@ -20,7 +20,6 @@
                         <div class="card-header">
                             <h3 class="card-title">DataTable with minimal features & hover style</h3>
                         </div>
-                        <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
@@ -29,6 +28,7 @@
                                         <th style="width: 8px">Category ID</th>
                                         <th style="width: 50px">Title</th>
                                         <th style="width: 800px">Body</th>
+                                        <th>Image</th>
                                         <th style="width: 8px">Likes</th>
                                         <th style="width: 8px">Dislikes</th>
                                         <th style="width: 8px">View</th>
@@ -42,6 +42,7 @@
                                             <td>{{ $post->category_id }}</td>
                                             <td>{{ $post->title }}</td>
                                             <td>{{ $post->body }}</td>
+                                            <td><img src="{{ $post->image }}" alt="" width="100px"></td>
                                             <td>{{ $post->likes }}</td>
                                             <td>{{ $post->dislikes }}</td>
                                             <td>
@@ -61,15 +62,10 @@
                                 </tbody>
                             </table>
                         </div>
-                        <!-- /.card-body -->
                     </div>
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
         </div>
-        <!-- /.container-fluid -->
     </section>
 @endsection

@@ -24,9 +24,11 @@
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>POST ID</th>
-                                        <th>Comment</th>
+                                        <th style="width: 10px">ID</th>
+                                        <th style="width: 10px">POST ID</th>
+                                        <th style="width: 500px">Comment</th>
+                                        <th style="width: 50px">View</th>
+                                        <th style="width: 50px">Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -35,6 +37,18 @@
                                             <td>{{ $comment->id }}</td>
                                             <td>{{ $comment->post_id }}</td>
                                             <td>{{ $comment->body }}</td>
+                                            <td>
+                                                <a href="/comments/{{ $comment->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-eye"></i></a>
+                                            </td>
+                                            <td>
+                                                <form action="/comments/{{ $comment->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"><i
+                                                            class="bi bi-trash3"></i></button>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
                                 </tbody>

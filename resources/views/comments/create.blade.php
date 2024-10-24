@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-12">
                     <a href="/comments" class="btn btn-primary mb-2">Back</a>
-                    <form action="/comment-create" method="POST">
+                    <form action="/comment" method="POST">
                         @csrf
                         <label for="post" class="form-label">Post id</label>
                         <select class="form-select" id="post" name="post_id" aria-label="Default select example">
@@ -16,16 +16,16 @@
                             @foreach ($posts as $post)
                                 <option value="{{ $post->id }}">{{ $post->title }}</option>
                             @endforeach
-                        </select><br>
+                        </select>
                         @error('post_id')
                             <span class="text-danger">
                                 {{ $message }}
                             </span>
                         @enderror
                         <div class="mb-3">
-                            <label for="name" class="form-label">Comment</label>
-                            <input type="text" name="comment" class="form-control" id="name" placeholder="Name...">
-                            @error('comment')
+                            <label for="comment" class="form-label">Comment</label>
+                            <textarea class="form-control" name="body" id="comment" rows="3"></textarea>
+                            @error('body')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>
