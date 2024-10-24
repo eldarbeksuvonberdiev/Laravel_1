@@ -13,11 +13,11 @@
                         <div class="mb-3">
                             <label for="name" class="form-label">Name</label>
                             <input type="text" name="name" class="form-control" id="name" placeholder="Name...">
-                            @if (session('name'))
-                                <span class="alert-danger">
-                                    {{ session('name') }}
+                            @error('name')
+                                <span class="text-danger">
+                                    {{ $message }}
                                 </span>
-                            @endif
+                            @enderror
                         </div>
                         <button class="btn btn-primary" type="submit">Save</button>
                     </form>

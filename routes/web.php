@@ -19,12 +19,22 @@ Route::get('/about',[OnlineDukonController::class,'about']);
 Route::get('/',[CategoryController::class,'index']);
 Route::get('/category-create',[CategoryController::class,'create']);
 Route::post('/create',[CategoryController::class,'store']);
+Route::get('/category/{id}',[CategoryController::class,'view']);
+Route::delete('/category/{id}',[CategoryController::class,'delete']);
 
 
 Route::get('/products',[ProductController::class,'index']);
+Route::get('/product-create',[ProductController::class,'create']);
+Route::post('/product-create',[ProductController::class,'store']);
+Route::get('/products/{id}',[ProductController::class,'view']);
+Route::delete('/products/{id}',[ProductController::class,'delete']);
+
 Route::get('/orders',[OrderController::class,'index']);
+
 Route::get('/posts',[PostController::class,'index']);
+
 Route::get('/likes',[LikeController::class,'index']);
+
 Route::get('/comments',[CommentController::class,'index']);
 
 

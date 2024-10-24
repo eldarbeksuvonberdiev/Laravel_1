@@ -11,12 +11,18 @@ class CategoryController extends Controller
     public function index()
     {
         $models = Category::all()->sortByDesc('id');
-        return view('tables.category', ['category' => $models]);
+        return view('categories.category', ['category' => $models]);
     }
 
     public function create()
     {
-        return view('tables.create');
+        return view('categories.create');
+    }
+
+    public function view(int $id)
+    {
+        $model = Category::find($id);
+        return view('categories.view',['model'=> $model]);
     }
 
     public function store(Request $request)
@@ -31,5 +37,10 @@ class CategoryController extends Controller
         $category->save();
         return redirect('/')->with('success','Category is successfully created');
     }
+
+    public function delete(int $id){
+        $model = Category::find($id);
+        $model->delete();
+        return redirect('/');
+    }
 }
-~
