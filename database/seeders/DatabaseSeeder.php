@@ -25,7 +25,10 @@ class DatabaseSeeder extends Seeder
             ProductSeeder::class,
             LikeSeeder::class,
             CommentSeeder::class,
-            OrderSeeder::class
+            OrderSeeder::class,
+            UsersSeeder::class,
+            CompanySeeder::class,
+            CompanyProductSeeder::class
         ]);
     }
 }

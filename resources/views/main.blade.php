@@ -139,6 +139,22 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="/users" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Users
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/companies" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Company
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
                             <a href="/tostore" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>

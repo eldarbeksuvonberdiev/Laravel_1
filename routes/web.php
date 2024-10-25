@@ -3,11 +3,13 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\CompanyController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\OnlineDukonController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -58,4 +60,24 @@ Route::post('/comment',[CommentController::class,'store']);
 Route::get('/comments/{id}',[CommentController::class,'view']);
 Route::delete('/comments/{id}',[CommentController::class,'delete']);
 
+//User routes
+Route::get('/users',[UsersController::class,'index']);
+Route::get('/users-create',[UsersController::class,'create']);
+Route::post('/users',[UsersController::class,'store']);
+Route::get('/users/{id}',[UsersController::class,'view']);
+Route::delete('/users/{id}',[UsersController::class,'delete']);
 
+
+//Company routes
+Route::get('/companies',[CompanyController::class,'index']);
+Route::get('/companies-create',[CompanyController::class,'create']);
+Route::post('/companies',[CompanyController::class,'store']);
+Route::get('/companies/{id}',[CompanyController::class,'view']);
+Route::delete('/companies/{id}',[CompanyController::class,'delete']);
+
+//Companyproducts routes
+Route::get('/companies',[CompanyController::class,'index']);
+Route::get('/companies-create',[CompanyController::class,'create']);
+Route::post('/companies',[CompanyController::class,'store']);
+Route::get('/companies/{id}',[CompanyController::class,'view']);
+Route::delete('/companies/{id}',[CompanyController::class,'delete']);
