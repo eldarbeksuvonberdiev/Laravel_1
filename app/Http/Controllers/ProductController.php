@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\ProductStoreRequest;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -21,12 +22,8 @@ class ProductController extends Controller
         return view('products.create', ['categories' => $models]);
     }
 
-    public function store(Request $request)
+    public function store(ProductStoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'category_id' => 'required|exists:categories,id'
-        ]);
         $model = $request->all();
         Product::create($model);
         return redirect('/products')->with('success','Product is successfully created');

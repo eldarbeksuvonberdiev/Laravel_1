@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\PostStoreRequest;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
@@ -20,26 +21,8 @@ class PostController extends Controller
         return view('posts.create', ['categories' => $models]);
     }
 
-    public function store(Request $request)
+    public function store(PostStoreRequest $request)
     {
-        $request->validate([
-            'category_id' => 'required|exists:categories,id',
-            'title' => 'required|max:255',
-            'body' => 'required',
-            'image' => 'required|file|mimes:png,jpg,jpeg',
-            'likes' => 'required',
-            'dislikes' => 'required',
-        ],[
-            'category_id.required' => "Turni tanlang!",
-            'category_id.exists' => "Id topilmadi",
-            'title.required' => "Ma'lumot to'ldirilmagan!",
-            'body.required' => "Ma'lumot to'ldirilmagan!",
-            'image.required' => "Rasm tanlanmagan!",
-            'image.mimes' => "Rasm formati noto'g'ri!",
-            'likes.required' => "Soni kiritilmadi!",
-            'dislikes.required' => "Soni kiritilmadi!"
-        ]);
-
         $model = $request->all();
         if($request->hasFile('image')){
             $file = $request->file('image');
@@ -56,13 +39,11 @@ class PostController extends Controller
     }
 
     public function view(Post $id){
-        // $model = Post::find($id);
         return view('posts.view',['post' => $id]);
     }
    
-    public function delete(int $id){
-        $model = Post::find($id);
-        $model->delete();
+    public function delete(Post $id){
+        $id->delete();
         return redirect('/posts')->with([
             'message' => 'Post is successfully deleted',
             'status' => 'danger'

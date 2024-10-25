@@ -12,7 +12,7 @@
                     <a href="/product-create" class="btn btn-primary mb-2">Create</a>
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                            <h3 class="card-title"><strong>Products</strong></h3>
                         </div>
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\OrderStoreRequest;
 use App\Models\Order;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -21,25 +22,19 @@ class OrderController extends Controller
         return view('orders.create', ['products' => $models]);
     }
 
-    public function store(Request $request)
+    public function store(OrderStoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-            'category_id' => 'required|exists:categories,id'
-        ]);
         $model = $request->all();
         Order::create($model);
         return redirect('/orders');
     }
 
-    public function view(int $id){
-        $model = Order::find($id);
-        return view('orders.view',['order' => $model]);
+    public function view(Order $id){
+        return view('orders.view',['order' => $id]);
     }
    
-    public function delete(int $id){
-        $model = Order::find($id);
-        $model->delete();
+    public function delete(Order $id){
+        $id->delete();
         return redirect('/orders');
     }
 }

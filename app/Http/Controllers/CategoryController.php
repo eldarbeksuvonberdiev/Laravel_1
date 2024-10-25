@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryStoreRequest;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -25,13 +26,8 @@ class CategoryController extends Controller
         return view('categories.view',['model'=> $model]);
     }
 
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        $request->validate([
-            'name' => 'required|max:255',
-        ]);
-
-
         $category = new Category();
         $category->name = $request->name;
         $category->save();
@@ -41,9 +37,8 @@ class CategoryController extends Controller
         ]);
     }
 
-    public function delete(int $id){
-        $model = Category::find($id);
-        $model->delete();
+    public function delete(Category $id){
+        $id->delete();
         return redirect('/')->with([
             'message' => 'Category is successfully deleted',
             'status' => 'danger'
