@@ -34,10 +34,9 @@ class UsersController extends Controller
         return view('/users.view', ['model' => $model]);
     }
 
-    public function delete(int $id)
+    public function delete(Users $id)
     {
-        $model = Users::find($id);
-        $model->delete();
-        return redirect('/users')->with('success', 'Product is successfully created');
+        $id->delete();
+        return redirect('/users')->with('success', 'User is successfully created');
     }
 }

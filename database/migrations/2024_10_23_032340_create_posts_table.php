@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained('categories')->onDelete('cascade');
             $table->string('title');
             $table->text('body');
-            // $table->image('image');
+            $table->image('image');
             $table->integer('likes');
             $table->integer('dislikes');
             $table->timestamps();

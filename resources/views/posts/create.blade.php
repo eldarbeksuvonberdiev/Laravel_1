@@ -50,7 +50,7 @@
                                 <label for="image" class="form-label">Image</label>
                                 <input type="file" name="image" class="form-control" id="image">
                             </div>
-                            @error('body')
+                            @error('image')
                                 <span class="text-danger">
                                     {{ $message }}
                                 </span>

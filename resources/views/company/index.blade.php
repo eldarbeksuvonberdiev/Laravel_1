@@ -1,7 +1,7 @@
 @extends('main')
 
-@section('title', 'Users')
-@section('pagename', 'Users')
+@section('title', 'AdminLTE 3 | Dashboard')
+@section('pagename', 'Companies')
 
 
 @section('content')
@@ -9,9 +9,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" data-bs-target="#create">
-                        Create
+                    <a href="/users" class="btn btn-primary mb-2">Back</a>
+                    <button type="button" class="btn btn-success mb-2" data-bs-toggle="modal" data-bs-target="#create">
+                        Create new
                     </button>
 
                     <!-- Modal -->
@@ -25,25 +25,30 @@
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="/users" method="POST">
+                                    <form action="/company" method="POST">
                                         @csrf
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Owner</label>
+                                            <input type="text" name="user" class="form-control" id="name"
+                                                aria-describedby="emailHelp" value="{{ $user->name }}" disabled>
+                                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                                        </div>
                                         <div class="mb-3">
                                             <label for="name" class="form-label">Name</label>
                                             <input type="text" name="name" class="form-control" id="name"
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1" class="form-label">Email</label>
-                                            <input type="email" name="email" class="form-control"
-                                                id="exampleInputEmail1" aria-describedby="emailHelp">
+                                            <label for="name" class="form-label">Phone</label>
+                                            <input type="text" name="phone" class="form-control" id="name"
+                                                aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
-                                            <label for="password" class="form-label">Password</label>
-                                            <input type="password" name="password" class="form-control" id="password">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="c_password" class="form-label">Confirm Password</label>
-                                            <input type="password" name="c_password" class="form-control" id="c_password">
+                                            <select class="form-select" name="is_active" aria-label="Default select example">
+                                                <option></option>
+                                                <option value = "0">Inactive</option>
+                                                <option value="1">Active</option>
+                                            </select>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -66,7 +71,7 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><strong>Users</strong></h3>
+                            <h3 class="card-title"><strong>Companies</strong></h3>
                         </div>
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
@@ -74,32 +79,34 @@
                                     <tr>
                                         <th>ID</th>
                                         <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Created at</th>
+                                        <th>Phone</th>
+                                        <th>Is Active</th>
                                         <th>View</th>
                                         <th>Delete</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($users as $user)
-                                        <tr>
-                                            <td>{{ $user->id }}</td>
-                                            <td>{{ $user->name }}</td>
-                                            <td>{{ $user->email }}</td>
-                                            <td>{{ $user->created_at }}</td>
-                                            <td style="width: 150px">
-                                                <a href="/company/{{ $user->id }}" class="btn btn-primary"><i
-                                                        class="bi bi-eye"></i> Companies</a>
-                                            </td>
-                                            <td style="width: 150px">
-                                                <form action="/users/{{ $user->id }}" method="POST">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger"><i
-                                                            class="bi bi-trash3"></i> Delete user</button>
-                                                </form>
-                                            </td>
-                                        </tr>
+                                    @foreach ($companies as $company)
+                                        @if ($user->id == $company->user_id)
+                                            <tr>
+                                                <td>{{ $company->id }}</td>
+                                                <td>{{ $company->name }}</td>
+                                                <td>{{ $company->phone }}</td>
+                                                <td>{{ $company->created_at }}</td>
+                                                <td style="width: 160px">
+                                                    <a href="/companyproducts/{{ $company->id }}" class="btn btn-primary"><i
+                                                            class="bi bi-eye"></i> Add product</a>
+                                                </td>
+                                                <td style="width: 200px">
+                                                    <form action="/company/{{ $company->id }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger"><i
+                                                                class="bi bi-trash3"></i> Delete Company</button>
+                                                    </form>
+                                                </td>
+                                            </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>
