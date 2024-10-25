@@ -21,7 +21,7 @@ class CompanyProductFactory extends Factory
         return [
             'company_id' => fake()->numberBetween(1,30),
             'name' => fake()->name(),
-            'image' => fake()->image(),
+            'image' => fake()->name(),
             'price' => fake()->numberBetween(100,1000)
         ];
     }
