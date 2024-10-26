@@ -39,4 +39,9 @@ class UsersController extends Controller
         $id->delete();
         return redirect('/users')->with('success', 'User is successfully created');
     }
+
+    public function search(Request $request){
+        $model = Users::where('name','like','%'.$request->search.'%')->paginate(10);
+        return view('users.index',['users' => $model]);
+    }
 }

@@ -12,7 +12,7 @@ class CompanyController extends Controller
 {
     
     public function index(Users $id){
-        $company = Company::all();
+        $company = Company::where('user_id',$id->id)->paginate(10);
         return view('company.index',['user' => $id,'companies' => $company]);
     }
 
@@ -26,5 +26,10 @@ class CompanyController extends Controller
         $id->delete();
         $company = Company::all();
         return view('company.index',['user' => $user,'companies' => $company]);
+    }
+
+    public function search(Request $request,Users $id){
+        $company = Company::where('user_id',$id->id)->where('name','like','%'.$request->search.'%')->paginate(10);
+        return view('company.index',['user' => $id,'companies' => $company]);
     }
 }

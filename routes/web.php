@@ -63,6 +63,7 @@ Route::delete('/comments/{id}',[CommentController::class,'delete']);
 
 //User routes
 Route::get('/users',[UsersController::class,'index']);
+Route::get('/users-search',[UsersController::class,'search']);
 Route::get('/users-create',[UsersController::class,'create']);
 Route::post('/users',[UsersController::class,'store']);
 Route::get('/users/{id}',[UsersController::class,'view']);
@@ -71,6 +72,7 @@ Route::delete('/users/{id}',[UsersController::class,'delete']);
 
 //Company routes
 Route::get('/company/{id}',[CompanyController::class,'index']);
+Route::get('/company-search/{id}',[CompanyController::class,'search']);
 Route::post('/company',[CompanyController::class,'store']);
 Route::get('/companies/{id}',[CompanyController::class,'view']);
 Route::delete('/company/{id}',[CompanyController::class,'delete']);

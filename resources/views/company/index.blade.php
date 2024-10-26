@@ -44,7 +44,8 @@
                                                 aria-describedby="emailHelp">
                                         </div>
                                         <div class="mb-3">
-                                            <select class="form-select" name="is_active" aria-label="Default select example">
+                                            <select class="form-select" name="is_active"
+                                                aria-label="Default select example">
                                                 <option></option>
                                                 <option value = "0">Inactive</option>
                                                 <option value="1">Active</option>
@@ -71,7 +72,18 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><strong>Companies</strong></h3>
+                            <div class="row">
+                                <div class="col-2 mt-1">
+                                    <h3 class="card-title"><strong>Companies</strong></h3>
+                                </div>
+                                <div class="col-10">
+                                    <form action="/company-search/{{ $user->id }}" method="GET" class="d-flex">
+                                        @csrf
+                                        <input class="form-control me-2" type="text" name="search" placeholder="Search">
+                                        <button class="btn btn-outline-success" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
@@ -87,31 +99,30 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($companies as $company)
-                                        @if ($user->id == $company->user_id)
-                                            <tr>
-                                                <td>{{ $company->id }}</td>
-                                                <td>{{ $company->name }}</td>
-                                                <td>{{ $company->phone }}</td>
-                                                <td>{{ $company->created_at }}</td>
-                                                <td style="width: 160px">
-                                                    <a href="/companyproducts/{{ $company->id }}" class="btn btn-primary"><i
-                                                            class="bi bi-eye"></i> Add product</a>
-                                                </td>
-                                                <td style="width: 200px">
-                                                    <form action="/company/{{ $company->id }}" method="POST">
-                                                        @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger"><i
-                                                                class="bi bi-trash3"></i> Delete Company</button>
-                                                    </form>
-                                                </td>
-                                            </tr>
-                                        @endif
+                                        <tr>
+                                            <td>{{ $company->id }}</td>
+                                            <td>{{ $company->name }}</td>
+                                            <td>{{ $company->phone }}</td>
+                                            <td>{{ $company->created_at }}</td>
+                                            <td style="width: 160px">
+                                                <a href="/companyproducts/{{ $company->id }}" class="btn btn-primary"><i
+                                                        class="bi bi-eye"></i> Add product</a>
+                                            </td>
+                                            <td style="width: 200px">
+                                                <form action="/company/{{ $company->id }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger"><i
+                                                            class="bi bi-trash3"></i> Delete Company</button>
+                                                </form>
+                                            </td>
+                                        </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                    {{ $companies->links() }}
                 </div>
             </div>
         </div>

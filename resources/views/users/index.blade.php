@@ -66,7 +66,18 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title"><strong>Users</strong></h3>
+                            <div class="row">
+                                <div class="col-2 mt-1">
+                                    <h3 class="card-title"><strong>Users</strong></h3>
+                                </div>
+                                <div class="col-10">
+                                    <form action="/users-search" method="GET" class="d-flex">
+                                        @csrf
+                                        <input class="form-control me-2" type="text" name="search" placeholder="Search">
+                                        <button class="btn btn-outline-success" type="submit">Search</button>
+                                    </form>
+                                </div>
+                            </div>
                         </div>
                         <div class="card-body">
                             <table id="example2" class="table table-bordered table-hover">
