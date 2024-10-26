@@ -77,6 +77,7 @@ Route::delete('/company/{id}',[CompanyController::class,'delete']);
 
 //Companyproducts routes
 Route::get('/companyproducts/{id}',[CompanyProductController::class,'index']);
+Route::post('/product-search/{id}',[CompanyProductController::class,'search']);
 Route::post('/companyproduct/{id}',[CompanyProductController::class,'store']);
-Route::get('/companies/{id}',[CompanyProductController::class,'view']);
+Route::put('/companyproduct/{id}',[CompanyProductController::class,'update']);
 Route::delete('/companyproducts/{id}',[CompanyProductController::class,'delete']);
