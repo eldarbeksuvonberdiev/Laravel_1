@@ -13,4 +13,9 @@ class Ovqat extends Model
     protected $fillable =[
         'name'
     ];
+
+    public function ovqatmasalliq(){
+        return $this->hasMany(OvqatMasalliq::class,'ovqat_id','id');
+    }
+
 }

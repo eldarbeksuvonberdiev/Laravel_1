@@ -13,4 +13,6 @@ class Masalliq extends Model
     protected $fillable = [
         'name'
     ];
+
+    
 }
