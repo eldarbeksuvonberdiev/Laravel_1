@@ -12,8 +12,7 @@ class PostController extends Controller
 {
     public function index()
     {
-        $models = Post::all();
-        return view('posts.posts', ['posts' => $models]);
+        return view('post.index');
     }
     public function create()
     {

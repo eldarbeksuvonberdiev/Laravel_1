@@ -4,15 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UsersStoreRequest;
+use App\Http\Requests\UserUpdateRequest;
 use App\Models\Users;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
 {
-    
-    public function index(){
-        $model = Users::orderBy('id','desc')->paginate(10);
-        return view('users.index',['users' => $model]);
+
+    public function index()
+    {
+        $model = Users::orderBy('id', 'asc')->paginate(10);
+        return view('users.index', ['users' => $model]);
     }
 
     public function create()
@@ -28,6 +30,13 @@ class UsersController extends Controller
         return redirect('/users')->with('success', 'Product is successfully created');
     }
 
+    public function update(UserUpdateRequest $request)
+    {
+        $model = $request->all();
+        Users::create($model);
+        return redirect('/users')->with('success', 'Product is successfully Updated');
+    }
+
     public function view(int $id)
     {
         $model = Users::find($id);
@@ -40,8 +49,9 @@ class UsersController extends Controller
         return redirect('/users')->with('success', 'User is successfully created');
     }
 
-    public function search(Request $request){
-        $model = Users::where('name','like','%'.$request->search.'%')->paginate(10);
-        return view('users.index',['users' => $model]);
+    public function search(Request $request)
+    {
+        $models = Users::where('name', 'like', '%' . $request->search . '%')->paginate(10);
+        return response()->json($models);
     }
 }

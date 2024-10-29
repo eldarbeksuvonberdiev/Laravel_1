@@ -90,7 +90,7 @@
             <div class="sidebar">
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-accordion="false">
-                        <li class="nav-item">
+                        {{-- <li class="nav-item">
                             <a href="/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
@@ -143,6 +143,22 @@
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Users
+                                </p>
+                            </a>
+                        </li> --}}
+                        <li class="nav-item">
+                            <a href="/" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Ovqatlar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/masalliq" class="nav-link">
+                                <i class="nav-icon fas fa-th"></i>
+                                <p>
+                                    Masalliqlar
                                 </p>
                             </a>
                         </li>
